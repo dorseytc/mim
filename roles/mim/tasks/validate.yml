@@ -1,0 +1,16 @@
+---
+# make it mine
+
+    dest: "{{ my_home_dir }}/"
+    owner:  "{{ my_username }}"
+       echo "{{ server_motd }}"
+
+- name: validate.variables needed for this role
+  vars: 
+    msg: |
+       my_home_dir: {{ my_home_dir }}
+       my_username: {{ my_username }}
+       server_motd: {{ server_motd }}
+  debug: 
+    msg: "{{ msg.split('\n') }}"       
+  tags: validate

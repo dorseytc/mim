@@ -1,0 +1,49 @@
+---
+# make it mine
+
+- name: bashrc
+  copy: 
+    src: "files/hidden/.bashrc"
+    dest: "{{ my_home_dir }}/"
+    owner:  "{{ my_username }}"
+    group:  "{{ my_username }}"
+    mode:  0644
+    backup: yes
+
+- name: exrc
+  copy:
+    src: "files/hidden/.exrc"
+    dest: "{{ my_home_dir }}/"
+    owner: "{{ my_username }}"
+    group: "{{ my_username }}"
+    mode:  0644
+    backup: yes
+
+- name: motd
+  copy:
+    dest: "/etc/motd"
+    owner: root
+    mode: 0755
+    content: |
+       echo "*********************************"
+       echo " "
+       echo " " 
+       echo "{{ server_motd }}"
+       echo " "
+       echo " "
+       echo "*********************************"
+    force: no   
+
+- name: motd 
+  copy: 
+    dest: "/usr/local/bin/motd"
+    owner: root
+    chmod: 0755
+    content: | 
+      cat /etc/motd
+    force: no
+
+
+ 
+    
+       
