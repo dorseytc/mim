@@ -1,0 +1,10 @@
+---
+
+- name: test
+  hosts: vagrant
+
+  roles:
+    - mim
+
+
+

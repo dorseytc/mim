@@ -1,7 +1,7 @@
 ---
 # make it mine
 
-- name: bashrc
+- name: copy.bashrc
   copy: 
     src: "files/hidden/.bashrc"
     dest: "{{ my_home_dir }}/"
@@ -10,7 +10,7 @@
     mode:  0644
     backup: yes
 
-- name: exrc
+- name: copy.exrc
   copy:
     src: "files/hidden/.exrc"
     dest: "{{ my_home_dir }}/"
@@ -19,7 +19,7 @@
     mode:  0644
     backup: yes
 
-- name: motd
+- name: copy.etc/motd
   copy:
     dest: "/etc/motd"
     owner: root
@@ -34,13 +34,12 @@
        echo "*********************************"
     force: no   
 
-- name: motd 
+- name: copy.usr/local/bin/motd 
   copy: 
-    dest: "/usr/local/bin/motd"
+    src: "files/motd"
+    dest: "/usr/local/bin"
     owner: root
-    chmod: 0755
-    content: | 
-      cat /etc/motd
+    mode: 0755
     force: no
 
 

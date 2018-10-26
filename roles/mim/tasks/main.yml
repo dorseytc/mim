@@ -1,5 +1,6 @@
 ---
 
+- include: assert.yml
 - include: validate.yml
 - include: copy.yml
  

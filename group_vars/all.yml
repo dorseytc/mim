@@ -1,0 +1,7 @@
+#ansible setup
+ansible_user: ted
+ansible_ssh_private_key_file: /home/vagrant/.ssh/id_rsa
+
+my_home_dir: "/home/{{ ansible_ssh_user }}"
+my_username: "{{ ansible_ssh_user }}"
+server_motd: "{{ ansible_hostname }}"

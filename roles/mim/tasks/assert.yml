@@ -1,0 +1,24 @@
+
+---
+# common tasks in the role
+
+- name: assert.ping
+  ping:
+
+- name: assert.whoami
+  command: /usr/bin/whoami
+  register: result
+ 
+- name: assert.print result
+  debug:
+    msg: "{{ result.stdout }}"
+     
+- name: assert.whoami
+  command: /usr/bin/whoami
+  become: yes
+  register: result
+ 
+- name: assert.print result
+  debug:
+    msg: "{{ result.stdout }}"
+     
