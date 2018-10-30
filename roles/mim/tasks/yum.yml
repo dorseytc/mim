@@ -1,0 +1,9 @@
+---
+# yum
+
+- name: yum.add_repository
+  yum:
+    name: 
+      - epel-release
+  become: yes
+

@@ -1,0 +1,10 @@
+---
+# git
+
+- name: git.yum
+  yum: 
+    name: 
+      - git
+    state: present
+  become: yes
+
