@@ -1,7 +1,7 @@
 ---
 
 - name: test
-  hosts: vagrant
+  hosts: local
 
   roles:
     - mim

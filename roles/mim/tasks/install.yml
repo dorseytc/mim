@@ -1,0 +1,16 @@
+---
+# make it mine
+
+- name: install.yum
+  yum: 
+    name: 
+      - git
+      - ntp
+    state: present
+  become: yes
+
+- name: install.ntp start
+  service:
+    name: ntpd
+    state: started
+  become: yes

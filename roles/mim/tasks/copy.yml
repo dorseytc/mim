@@ -34,6 +34,13 @@
        echo "*********************************"
     force: no   
 
+
+- name: copy.set permissions
+  file:
+    path: "/usr/local/bin"
+    mode: 0777
+  become: yes
+    
 - name: copy.usr/local/bin/motd 
   copy: 
     src: "files/motd"
@@ -41,6 +48,7 @@
     owner: root
     mode: 0755
     force: no
+  become: yes
 
 
  
