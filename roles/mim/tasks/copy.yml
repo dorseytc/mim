@@ -20,19 +20,12 @@
     backup: yes
 
 - name: copy.etc/motd
-  copy:
+  become: yes
+  template:
+    src: "motd.j2"
     dest: "/etc/motd"
     owner: root
     mode: 0755
-    content: |
-       echo "*********************************"
-       echo " "
-       echo " " 
-       echo "{{ server_motd }}"
-       echo " "
-       echo " "
-       echo "*********************************"
-    force: no   
 
 
 - name: copy.set permissions

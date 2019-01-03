@@ -1,0 +1,12 @@
+# Emacs
+*~
+\#*\#
+.\#*
+
+# Vim
+*.sw*
+
+# Ansible
+*.retry
+.ansible-vault-password
+.vagrant
