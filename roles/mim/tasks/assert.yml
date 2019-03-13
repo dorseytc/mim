@@ -8,6 +8,7 @@
 - name: assert.whoami
   command: /usr/bin/whoami
   register: result
+  changed_when: False
  
 - name: assert.print result
   debug:
@@ -17,6 +18,7 @@
   command: /usr/bin/whoami
   become: yes
   register: result
+  changed_when: False
  
 - name: assert.print result
   debug:
