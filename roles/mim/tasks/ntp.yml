@@ -26,7 +26,7 @@
 
 - name: ntp.timesyncd
   service:
-    name: systemd-timesyncd
+    name: ntp
     state: started
   become: yes
   when: ansible_facts['os_family'] == 'Debian'

@@ -4,6 +4,22 @@
 - name: vim.assert directories | debug
   debug: var=ansible_env.HOME
 
+- name: vim.apt
+  apt:
+    name: 
+      - vim
+    state: latest
+  become: yes
+  when: ansible_facts['pkg_mgr'] == 'apt'
+
+- name: vim.yum
+  yum:
+    name: 
+      - vim
+    state: latest
+  become: yes
+  when: ansible_facts['pkg_mgr'] == 'yum'
+
 - name: vim.assert directories
   file:
     path: "{{ ansible_env.HOME }}/{{ item }}"
