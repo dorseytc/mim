@@ -7,4 +7,12 @@
       - git
     state: present
   become: yes
+  when: ansible_facts['pkg_mgr'] == 'yum'
 
+- name: git.apt
+  apt: 
+    name: 
+      - git
+    state: latest
+  become: yes
+  when: ansible_facts['pkg_mgr'] == 'apt'

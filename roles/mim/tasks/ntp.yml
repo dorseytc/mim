@@ -7,9 +7,26 @@
       - ntp
     state: present
   become: yes
+  when: ansible_facts['pkg_mgr'] == 'yum'
+
+- name: ntp.apt
+  apt: 
+    name: 
+      - ntp
+    state: present
+  become: yes
+  when: ansible_facts['pkg_mgr'] == 'apt'
 
 - name: ntp.ntp start
   service:
     name: ntpd
     state: started
   become: yes
+  when: ansible_facts['os_family'] == "RedHat"
+
+- name: ntp.timesyncd
+  service:
+    name: systemd-timesyncd
+    state: started
+  become: yes
+  when: ansible_facts['os_family'] == 'Debian'

@@ -6,4 +6,4 @@
     name: 
       - epel-release
   become: yes
-
+  when: ansible_facts['pkg_mgr'] == 'yum'
