@@ -1,9 +1,17 @@
 ---
-# yum
+# packages
 
-- name: yum.add_repository
+- name: packages.add_repository
   yum:
     name: 
       - epel-release
   become: yes
   when: ansible_facts['pkg_mgr'] == 'yum'
+
+- name: packages.clamav
+  apt:
+    name: 
+      - clamav
+      - clamav-daemon
+  become: yes
+  when: ansible_facts['pkg_mgr'] == 'apt'
