@@ -7,6 +7,6 @@ using ansible
 
 ## To run, do something like:
 
-ansible-playbook ~/mim/site.yml -i ~/mim/hosts 
+ansible-playbook site.yml -i hosts -K
 
 

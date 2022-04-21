@@ -19,6 +19,25 @@
     mode:  0644
     backup: yes
 
+- name: copy.vimrc become become
+  become: yes
+  copy:
+    src: "files/hidden/.vimrc"
+    dest: "/root/"
+    owner: root
+    group: root
+    mode:  0644
+    backup: yes
+
+- name: copy.vimrc
+  copy:
+    src: "files/hidden/.vimrc"
+    dest: "{{ my_home_dir }}/"
+    owner: "{{ my_username }}"
+    group: "{{ my_username }}"
+    mode:  0644
+    backup: yes
+
 - name: copy.etc/motd
   become: yes
   template:
