@@ -4,7 +4,7 @@
 - import_tasks: assert.yml
 - import_tasks: validate.yml
 - import_tasks: copy.yml
-- import_tasks: yum.yml
+- import_tasks: packages.yml
 - import_tasks: git.yml
 - import_tasks: ntp.yml
 - import_tasks: vim.yml
