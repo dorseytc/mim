@@ -1,5 +1,5 @@
 ---
-# make it mine
+# copy files
 
 - name: copy.bashrc
   copy: 
@@ -19,7 +19,7 @@
     mode:  0644
     backup: yes
 
-- name: copy.vimrc become become
+- name: copy.vimrc become
   become: yes
   copy:
     src: "files/hidden/.vimrc"
